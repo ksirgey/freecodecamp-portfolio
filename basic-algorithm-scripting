@@ -156,3 +156,21 @@ function frankenSplice(arr1, arr2, n) {
   return newArr2;
 }
 frankenSplice([1, 2, 3], [4, 5, 6], 1);
+
+
+//Where Do I Belong?
+
+function getIndexToIns(arr, num) {
+  // Find my place in this sorted array.
+  let sorted = arr.sort(function(a,b) {
+    return a - b;
+  })
+
+  for (let i = 0; i < sorted.length; i++) {
+    if (sorted[i] >= num) {
+      return i;
+    }
+  }
+  return sorted.length;
+}
+getIndexToIns([40, 60], 50);
