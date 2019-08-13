@@ -190,3 +190,19 @@ function mutation(arr) {
   return true;
 }
 mutation(["hello", "hey"]);
+
+
+//Chunky Monkey
+
+function chunkArrayInGroups(arr, size) {
+  // Break it up.
+  let container = [];
+  for (let i = 0; i < arr.length; i+=size){
+    let sliced = arr.slice(i,i+size);
+    container.push(sliced);
+    console.log(container);
+  }
+
+  return container;
+}
+chunkArrayInGroups(["a", "b", "c", "d"], 2);
