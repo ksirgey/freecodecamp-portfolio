@@ -32,3 +32,21 @@ function diffArray(arr1, arr2) {
   return newArr;
 }
 diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
+
+
+//Seek and Destroy
+
+function destroyer(arr) {
+  // Remove all the values
+  let args = Array.prototype.slice.call(arguments);
+  let list = arr.slice();
+  for (let i = 1; i < args.length; i++) {
+    for (let j = list.length-1; j >= 0; j--){
+      if (args[i] == list[j]) {
+        list.splice(j,1);
+      }
+    }
+  }
+  return list;
+}
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);
