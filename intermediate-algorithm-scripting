@@ -70,4 +70,15 @@ function whatIsInAName(collection, source) {
 whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
 
 
-//
+//Spinal Tap Case
+
+function spinalCase(str) {
+  // "It's such a fine line between stupid, and clever."
+  // --David St. Hubbins
+  let regex = /\s+|_+/g
+
+  str = str.replace(/([a-z])([A-Z])/g, '$1 $2');
+
+  return str = str.replace(regex, '-').toLowerCase();
+}
+spinalCase('This Is Spinal Tap');
