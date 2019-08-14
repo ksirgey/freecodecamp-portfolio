@@ -1,0 +1,16 @@
+//Sum All Numbers in a Range
+
+function sumAll(arr) {
+  let sorted = arr.sort(function(a,b) {return a - b});
+  let newArr = [];
+  for(let i = sorted[0]; i <= sorted[1]; i++) {
+    newArr.push(i);
+  }
+  return newArr.reduce(function(a,b) {
+    return a + b;
+  })
+}
+sumAll([1, 4]);
+sumAll([10, 5]);
+
+
