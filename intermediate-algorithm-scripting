@@ -99,3 +99,26 @@ function translatePigLatin(str) {
   
 }
 translatePigLatin("consonant");
+
+
+//Search and Replace
+
+function myReplace(str, before, after) {
+  let afterUpper = '';
+  if (before.charAt(0) === before.charAt(0).toUpperCase()) {
+    afterUpper = after.charAt(0).toUpperCase() + after.slice(1);
+    console.log(afterUpper);
+  } else {
+    afterUpper = after;
+  }
+  
+  let arr = str.split(' ');
+  for (let i = 0; i < arr.length; i++) {
+    if (before == arr[i]) {
+      arr.splice(i,1,afterUpper);
+    }
+  }
+  let newStr = arr.join(' ');
+  return newStr;
+}
+myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
