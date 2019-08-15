@@ -122,3 +122,25 @@ function myReplace(str, before, after) {
   return newStr;
 }
 myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
+
+
+//DNA Pairing
+
+function pairElement(str) {
+  let container = [];
+  let pairs = [
+    ['G','C'], ['A', 'T'], ['C','G'], ['T','A']
+    ];
+
+  let arr = str.split('');
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < pairs.length; j++) {
+      if (arr[i] == pairs[j][0]) {
+        container.push(pairs[j]);
+      }
+    }
+  }
+
+  return container;
+}
+pairElement("GCG");
