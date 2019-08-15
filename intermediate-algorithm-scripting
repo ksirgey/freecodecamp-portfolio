@@ -82,3 +82,20 @@ function spinalCase(str) {
   return str = str.replace(regex, '-').toLowerCase();
 }
 spinalCase('This Is Spinal Tap');
+
+
+//Piglatin
+
+function translatePigLatin(str) {
+  let regex = /[aeiou]/;
+  if (str[0].match(regex)) {
+    return str + 'way';
+  } else if (str.match(regex) == null) {
+    return str + 'ay';
+  }
+  let vowelStart = str.indexOf(str.match(regex)[0]);
+
+  return str.substr(vowelStart) + str.substr(0,vowelStart) + 'ay';
+  
+}
+translatePigLatin("consonant");
