@@ -218,3 +218,43 @@ function sumFibs(num) {
   return result;
 }
 sumFibs(4);
+
+
+//Sum All Primes
+
+function sumPrimes(num) {
+  let arr = [];
+  let i = 2;   // i is the current number we check if it is prime
+  let k = 1;   // k is the number of primes found so far
+  arr.push(i);   // insert the first, smallest prime
+  let j;
+  let notPrime;
+
+  while (i < num) {
+    i++;
+    j = 0;
+    notPrime = true;
+
+    while (j < k){
+      if (i % arr[j] == 0){  // if divisible by a smaller prime
+        notPrime = false;
+        break;
+      } 
+      j++;
+    }
+
+    if (notPrime == true){   // we found a new prime
+      arr.push(i);    // store the new prime
+      k++;            // increase the number of primes found
+    }
+  }
+  console.log(arr);
+ let addedUp = arr.reduce(function(a,b) {
+   return a + b;
+ })
+
+ console.log(addedUp);
+
+  return addedUp;
+}
+sumPrimes(10);
