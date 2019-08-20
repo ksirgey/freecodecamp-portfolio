@@ -402,7 +402,7 @@ function orbitalPeriod(arr) {
   var earthRadius = 6367.4447;
 
   for (let prop in arr) {
-    let orbPeriod = Math.round(2 * Math.PI * (Math.sqrt(Math.pow(earthRadius + arr[prop].avgAlt, 3))/GM));
+    var orbPeriod = Math.round(2 * Math.PI * Math.sqrt(Math.pow(arr[prop].avgAlt + earthRadius, 3) / GM));
     delete arr[prop].avgAlt;
     arr[prop].orbitalPeriod = orbPeriod;
   }
