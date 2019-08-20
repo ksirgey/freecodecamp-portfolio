@@ -270,3 +270,22 @@ function dropElements(arr, func) {
   return arr;
 }
 dropElements([1, 2, 3], function(n) {return n < 3; });
+
+
+//Steamroller
+
+function steamrollArray(arr) {
+  // I'm a steamroller, baby
+  let flattened = [];
+  steamroller(arr);
+  function steamroller(val) {
+    if (Array.isArray(val)){
+      val.forEach(steamroller);
+    } else {
+      flattened.push(val);
+    }
+  }
+  return flattened;
+  
+}
+steamrollArray([1, [2], [3, [[4]]]]);
