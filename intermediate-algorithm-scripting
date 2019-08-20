@@ -324,3 +324,37 @@ function truthCheck(collection, pre) {
   return true;
 }
 truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex");
+
+
+// Arguments Optional
+
+function addTogether() {
+  let args = new Array(arguments.length);
+  for (let i = 0; i < args.length; i++) {
+    args[i] = arguments[i];
+  }
+
+  if (args.length == 2) {
+    if (typeof(args[0]) != 'number' || typeof(args[1]) != 'number') {
+      return undefined;
+    } else {
+      return args[0] + args[1];
+    }
+  }
+
+  if (args.length == 1) {
+    let a = args[0];
+    if (typeof(a) != 'number') {
+      return undefined;
+    } else {
+      return function(b) {
+        if (typeof(b) != 'number') {
+          return undefined;
+        } else {
+          return a + b;
+        }
+      }
+    }
+  }
+}
+addTogether(2,3);
