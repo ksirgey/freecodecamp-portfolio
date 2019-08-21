@@ -1,0 +1,26 @@
+// Find the Symmetric Difference
+
+function sym(args) {
+  var args = [];
+  for (var i = 0; i < arguments.length; i++) {
+    args.push(arguments[i]);
+  }
+
+  function symDif(arrayOne, arrayTwo){
+    let results = [];
+    arrayOne.forEach(function(item) {
+      if (arrayTwo.indexOf(item) == -1 && results.indexOf(item) == -1) {
+        results.push(item);
+      }
+    })
+    arrayTwo.forEach(function(item) {
+      if (arrayOne.indexOf(item) == -1 && results.indexOf(item) == -1) {
+        results.push(item);
+      }
+    })
+    return results;
+  }
+
+  return args.reduce(symDif);
+}
+sym([1, 2, 3], [5, 2, 1, 4]);
